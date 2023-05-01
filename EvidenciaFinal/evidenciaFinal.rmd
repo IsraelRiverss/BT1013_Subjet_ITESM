@@ -60,5 +60,5 @@ countBases <- function(sequence) {
 ```{r}
 library(seqinr)
 library(ape)
-AY274119.3 <- read.fasta()
+AY2741193 <- read.fasta(file = AY2741193.fasta)
 ```
