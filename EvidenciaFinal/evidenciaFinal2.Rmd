@@ -184,20 +184,24 @@ percentageBases <- function(dnaseq){
 
 ```{r}
 # Read Sequences and store it as a vector
-# Strain AY2741193.txt
-seq1 <- readLines("AY2741193.txt", n = -1)[-1]
+# Read Strain Actual.fasta
+seq1 <- readLines("Actual.fasta", n = -1)[-1]
 var1 <- paste(seq1, collapse = " ")
 strainAY27 <- strsplit(var1, "")[[1]]
-# Strain B11529.txt
-seq2 <- readLines("B11529.txt", n = -1)[-1]
+# Read Strain Alpha.fasta
+seq2 <- readLines("Alpha.fasta", n = -1)[-1]
 var2 <- paste(seq2, collapse = " ")
 strainB115 <- strsplit(var2, "")[[1]]
-# Strain B1351.txt
-seq3 <- readLines("B1351.txt", n = -1)[-1]
+# Read Strain Delta.fasta
+seq3 <- readLines("Delta.fasta", n = -1)[-1]
 var3 <- paste(seq3, collapse = " ")
 straineB135 <- strsplit(var3, "")[[1]]
-# Strain B16172.txt
-seq4 <- readLines("B16172.txt", n = -1)[-1]
+# Read Strain Omicron.fasta
+seq4 <- readLines("Omicron.fasta", n = -1)[-1]
+var4 <- paste(seq4, collapse = " ")
+strainB161 <- strsplit(var4, "")[[1]]
+# Read Strain Wuhan.fasta
+seq4 <- readLines("Wuhan.fasta", n = -1)[-1]
 var4 <- paste(seq4, collapse = " ")
 strainB161 <- strsplit(var4, "")[[1]]
 ```
@@ -227,3 +231,14 @@ w <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
 
 grid.arrange(w, ncol=2)
 ```
+
+```{r}
+# Color in function of the cluster
+par(mar=c(1,1,1,7))
+dend %>%
+  set("labels_col", value = c("skyblue", "orange", "grey"), k=3) %>%
+  set("branches_k_color", value = c("skyblue", "orange", "grey"), k = 3) %>%
+  plot(horiz=TRUE, axes=FALSE)
+abline(v = 350, lty = 2)
+```
+

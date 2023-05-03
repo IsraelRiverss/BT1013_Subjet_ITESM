@@ -122,21 +122,21 @@ percentageBases <- function(dnaseq){
 ```{r}
 # Read Sequences and store it as a vector
 # Strain AY2741193.txt
-seq1 <- readLines("AY2741193.txt", n = -1)[-1]
+seq1 <- readLines("", n = -1)[-1]
 var1 <- paste(seq1, collapse = " ")
 strainAY27 <- strsplit(var1, "")[[1]]
 # Strain B11529.txt
-seq2 <- readLines("B11529.txt", n = -1)[-1]
-var2 <- paste(seq2, collapse = " ")
-strainB115 <- strsplit(var2, "")[[1]]
+seq1 <- readLines("", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+strainAY27 <- strsplit(var1, "")[[1]]
 # Strain B1351.txt
-seq3 <- readLines("B1351.txt", n = -1)[-1]
-var3 <- paste(seq3, collapse = " ")
-straineB135 <- strsplit(var3, "")[[1]]
+seq1 <- readLines("", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+strainAY27 <- strsplit(var1, "")[[1]]
 # Strain B16172.txt
-seq4 <- readLines("B16172.txt", n = -1)[-1]
-var4 <- paste(seq4, collapse = " ")
-strainB161 <- strsplit(var4, "")[[1]]
+seq1 <- readLines("", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+strainAY27 <- strsplit(var1, "")[[1]]
 ```
 
 ```{r}
