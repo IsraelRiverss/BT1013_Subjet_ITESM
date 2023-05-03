@@ -1,0 +1,237 @@
+---
+title: "evidenciaFinal"
+author: "Fernando Israel Rios Garcia"
+date: "2023-04-30"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+
+```
+
+# Investiga,
+
+¿Cuál es la situación actual de COVID-19 a nivel mundial, en México, en tu estado de origen y en tu municipio, alcaldía o colonia? Puedes iniciar tu búsqueda en el sitio de [Johns HopkinsLinks to an external site.](https://coronavirus.jhu.edu/map.html).
+
+El estado de la pandemia de COVID-19 en la fecha 4/30/2023. Dentro del panorama mundial hay 676,609,955 casos de COVID-19, 6,881,955 de muertes. En México es de un total de casos COVID-19 de 7,483,444 con 333,1888 muertes por la enfermedad. Dentro de mi localidad, en el estado de Querétaro 191,063 de casos COVID-19 y 6,974 de muertos. Aunque en el municipio de Querétaro solo hay el dato de 125,169 casos COVID-19.
+
+# ¿Cuál fue la primera variante del virus que se propagó a todo el mundo?
+
+La primera variante de COVID-19 fue Alpha (B.1.1.7) según (Katella, 2023) "Alpha (B.1.1.7) was the first of the highly publicized variants. Alpha first appeared in Great Britain in November 2020 and infections surged in December of that year."
+
+# ¿Cuáles son las otras variantes del virus que existen en otras regiones del mundo?
+
+Hay una larga de lista de variantes del COVID-19 desde la mencionada Alpha (B.1.1.7). Según el artículo escrito por (Katella, 2023):
+
+1.Omicron (BA.1)- Botswana and South Africa in 2021
+
+2.Delta (B.1.617.2)-India a finales de 2020
+
+3.Delta AY.4.2-Inglaterra
+
+4.Beta (B.1.351)- South Africa
+
+5.Alpha (B.1.1.7)-Inglaterra 2020
+
+There is another table of variants in the CDC segun (CDC,2023) existen las siguientes variantes:
+
+
+# ¿Cómo buscarías información de la variante del virus en tu país?
+
+Para buscar información sobre la variante del virus en mi país, revisaría sitios oficiales del gobierno, como el de la Secretaría de Salud, que proporcionan información actualizada sobre COVID-19, incluyendo la propagación del virus y las variantes identificadas. También buscaría información en medios de comunicación locales, revistas y artículos científicos. Además, trataría de revisar lo que expertos en salud han declarado y seguir a organizaciones en redes sociales que estén brindando información confiable sobre la situación del virus en mi país y el mundo en general. Me aseguraría de verificar cualquier información que encuentre antes de compartirla con otros, para evitar difundir información falsa o engañosa.
+
+# Imagina que te encuentras en una situación similar a la de Li Wenliang, médico chino que intentó alertar sobre el brote de coronavirus en su país, pero fue detenido por las autoridades y obligado a retractarse, ¿qué harías en su caso? Selecciona un inciso:a) Lo reportas al centro de investigación o la universidad. b) Lo reportas a la prensa. c) Guardas la información. Elige y justifica tu respuesta. Revisa el siguiente video como apoyo:
+
+Lo reportaría a la prensa, creo que si yo fuera como Li un experto o profesional que tiene en sus manos información sensible, que si difundiera salvaría vidas la compartiría. Por que es mi vida por la de muchos mas, si me arrestaran por difundir la información o me mataran o desaparecieran seria mi vida por a ver alertado y por lo tanto salvado a muchos otros.
+
+# Codigo
+
+```{r}
+library(ape)
+library(gridExtra)
+library(ggplot2)
+library(stringr)
+library(seqinr)
+```
+
+```{r}
+lengthSeq <- function(dnaseq) {
+  contador <- 0
+  for (i in 1:length(dnaseq)) {
+    contador <- contador + 1
+  }
+  return(contador)
+}
+```
+
+```{r}
+percentageGC <- function(dnaseq) {
+  bases <- c("C", "G")
+  c <- 0
+  for(i in 1:length(bases)){
+    contador <- 0
+    for(j in 1:length(dnaseq)){
+      if (bases [i] == dnaseq [j]){
+        contador <- contador + 1
+      }
+    }
+    amount <- contador*100/length(dnaseq)
+    c <- amount + c    
+  }
+  print(paste0("GC : ", c, "%"))
+}
+```
+
+```{r}
+reverseSeq <- function(sequence) {
+  n <- length(sequence)
+  hebra_inv <- numeric(n)
+  for(i in 1:n){
+    hebra_inv[i] <- sequence[n-i+1]
+  }
+  return(hebra_inv)
+}
+```
+
+```{r}
+percentageBases <- function(dnaseq){
+  bnum <- c(0, 0, 0, 0)
+  for (i in 1:length(dnaseq)) {
+    if (dnaseq[i] == "A") {
+      bnum[1] <- bnum[1] + 1
+    } else if (dnaseq[i] == "C") {
+      bnum[2] <- bnum[2] + 1
+    } else if (dnaseq[i] == "G") {
+      bnum[3] <- bnum[3] + 1
+    } else if (dnaseq[i] == "T") {
+      bnum[4] <- bnum[4] + 1
+    }
+  }
+  tot_b <- sum(bnum)
+  porcentaje_bases <- c(0, 0, 0, 0)
+  for (i in 1:length(bnum)) {
+    porcentaje_bases[i] <- ((bnum[i] / tot_b) * 100)
+  }
+  return(porcentaje_bases)
+}
+```
+
+```{r}
+# Read Sequences and store it as a vector
+# Strain AY2741193.txt
+seq1 <- readLines("AY2741193.txt", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+strainAY27 <- strsplit(var1, "")[[1]]
+# Strain B11529.txt
+seq2 <- readLines("B11529.txt", n = -1)[-1]
+var2 <- paste(seq2, collapse = " ")
+strainB115 <- strsplit(var2, "")[[1]]
+# Strain B1351.txt
+seq3 <- readLines("B1351.txt", n = -1)[-1]
+var3 <- paste(seq3, collapse = " ")
+straineB135 <- strsplit(var3, "")[[1]]
+# Strain B16172.txt
+seq4 <- readLines("B16172.txt", n = -1)[-1]
+var4 <- paste(seq4, collapse = " ")
+strainB161 <- strsplit(var4, "")[[1]]
+```
+
+```{r}
+#strainAY27
+lengthAY27 <- lengthSeq(strainAY27)
+percentageGC_AY27 <- percentageGC(strainAY27)
+reverseSeqAY27 <- reverseSeq(strainAY27)
+print("strainAY27")
+print(paste("Longitud de secuencia",lengthAY27))
+print(paste("Porcentaje de GC en secuencia",percentageGC_AY27))
+print("Secuencia al reves")
+print(reverseSeqAY27)
+```
+
+```{r}
+#strainB115
+lengthB115 <- lengthSeq(strainB115)
+percentageGC_B115 <- percentageGC(strainB115)
+reverseSeqB115 <- reverseSeq(strainB115)
+print("strainB115")
+print(paste("Longitud de secuencia",lengthB115))
+print(paste("Porcentaje de GC en secuencia",percentageGC_B115))
+print("Secuencia al reves")
+print(reverseSeqB115)
+```
+
+```{r}
+#straineB135
+lengthB135 <- lengthSeq(straineB135)
+percentageGC_B135 <- percentageGC(straineB135)
+reverseSeqB135 <- reverseSeq(straineB135)
+print("straineB135")
+print(paste("Longitud de secuencia",lengthB135))
+print(paste("Porcentaje de GC en secuencia",percentageGC_B135))
+print("Secuencia al reves")
+print(reverseSeqB135)
+```
+
+```{r}
+#strainB161
+lengthB161 <- lengthSeq(strainB161)
+percentageGC_B161 <- percentageGC(strainB161)
+reverseSeqB161 <- reverseSeq(strainB161)
+print("strainB161")
+print(paste("Longitud de secuencia",lengthB161))
+print(paste("Porcentaje de GC en secuencia",percentageGC_B161))
+print("Secuencia al reves")
+print(reverseSeqB161)
+```
+
+```{r}
+gwuhan = data.frame(
+  bases = c("A", "C", "G", "T"),
+  g1 = percentageBases(strainAY27)
+)
+
+w <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+  geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "strainAY27"), stat = "identity", position = "dodge") +
+  labs(title = "Comparación de las bases de ADN de las variantes del virus",x = "Bases", y = "Frecuencia", fill = "") +
+  scale_fill_manual(values = c("strainAY27" = "black")) +
+  theme_minimal()
+
+galfa = data.frame(
+  bases = c("A", "C", "G", "T"),
+  g2 = percentageBases(strainB115)
+)
+
+a <- ggplot(galfa, aes(x = bases, y = g2, fill = bases)) +
+  geom_bar(data = galfa, aes(x = bases, y = g2, fill = "strainB115"), stat = "identity", position = "dodge") +
+  labs(title = "",x = "Bases", y = "Frecuencia", fill = "") +
+  scale_fill_manual(values = c("strainB115" = "grey")) +
+  theme_minimal()
+
+gbeta = data.frame(
+  bases = c("A", "C", "G", "T"),
+  g3 = percentageBases(straineB135)
+)
+
+b <- ggplot(gbeta, aes(x = bases, y = g3, fill = bases)) +
+  geom_bar(data = gbeta, aes(x = bases, y = g3, fill = "straineB135"), stat = "identity", position = "dodge") +
+  labs(title = "",x = "Bases", y = "Frecuencia", fill = "") +
+  scale_fill_manual(values = c("straineB135" = "pink")) +
+  theme_minimal()
+
+gdelta = data.frame(
+  bases = c("A", "C", "G", "T"),
+  g4 = percentageBases(strainB161)
+)
+d <- ggplot(gdelta, aes(x = bases, y = g4, fill = bases)) +
+  geom_bar(data = gdelta, aes(x = bases, y = g4, fill = "strainB161"), stat = "identity", position = "dodge") +
+  labs(title = "",x = "Bases", y = "Frecuencia", fill = "") +
+  scale_fill_manual(values = c("strainB161" = "purple")) +
+  theme_minimal()
+
+grid.arrange(w,a,b,d, ncol=2)
+```
+
+Las graficas muestran la comparacion de nuleotidos entre variantes, podemos notar que la adenina y timina en general son los que mashay dentro delas secuencia. pero en general no exite una diferencia que los haga ser distitnos entre variatnes de la enfermedad.

@@ -1,0 +1,229 @@
+---
+title: "evidenciaFinal"
+author: "Fernando Israel Rios Garcia"
+date: "2023-04-30"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Evidencia 2
+
+## ¿Cuáles son los virus "similares" a SARS-CoV-2 en el mundo?
+
+El SRAS-Cov-2 es un virus de la familia coronavirus, los sintomas que un humano presenta al cotagiarse son los de la gripe. Por lo tanto los virus similares al COVID-19 presentan sintomas parecidos en los huespedes que contagian, sus diferencias varian en la efectividad en la que se contagian y la tasa de moratlidad. En los humanos hay siete virus similares al SARS-Cov-2:
+
+1.  SARS-CoV-2
+2.  SARS-CoV
+3.  MERS-CoV
+4.  HCoV-229E
+5.  HCoV-NL63
+6.  HCoV-OC43
+7.  HCoV-HKU1
+
+## Especies que pueden ser cercanos al genoma de SARS-CoV-2? Incluye de qué especies son y menciona las referencias de los artículos consultados en PUBMED.
+
+En el articulo Similarities and Dissimilarities of COVID-19 and Other Coronavirus Diseases escrito por Sing Fung y Ding Xiang Liu mencionna los siguientes virus similares al genoma del SARS-Cov-2:
+
++----------+-------------+
+| Host     | Coronavirus |
++==========+=============+
+| Humans   | SARS-CoV    |
+|          |             |
+|          | MERS-CoV    |
+|          |             |
+|          | HCoV-229E   |
+|          |             |
+|          | HCoV-NL63   |
+|          |             |
+|          | HCoV-OC43   |
+|          |             |
+|          | HCoV-HKU1   |
++----------+-------------+
+| Pig      | TGEV        |
+|          |             |
+|          | PRCoV       |
+|          |             |
+|          | PHEV        |
+|          |             |
+|          | PEDV        |
+|          |             |
+|          | PDCoV       |
+|          |             |
+|          | SADS-CoV    |
++----------+-------------+
+| Mouse    | MHV         |
++----------+-------------+
+| Rat      | SDAV        |
+|          |             |
+|          | RCoV-P      |
+|          |             |
+|          | \*Horse     |
+|          |             |
+|          | ECoV        |
++----------+-------------+
+| Cattle   | BCoV        |
++----------+-------------+
+| Cat      | FIPV        |
+|          |             |
+|          | FECV        |
++----------+-------------+
+| Dog      | CCoV        |
+|          |             |
+|          | CRCoV       |
++----------+-------------+
+| Chicken  | IBV         |
++----------+-------------+
+
+## En relación con la situación actual reflexiona, ¿qué propondrías que se deba hacer durante la contingencia del SARS-CoV-2 en comunidades de bajos recursos? Si tu vivieras en una situación de escasos recursos, ¿qué harías? Justifica tu respuesta.
+
+Durante la contingencia del SARS-CoV-2 en comunidades de bajos recursos, es importante tomar medidas para proteger la salud de las personas y prevenir la propagación del virus. Algunas de las medidas que se pueden tomar incluyen:
+
+1.  Promover la educación sobre el virus: es importante difundir información precisa y confiable sobre el virus y cómo prevenir su propagación. Se pueden utilizar carteles, folletos o anuncios en los medios locales para educar a la comunidad.
+
+2.  Promover el distanciamiento físico: aunque puede ser difícil en comunidades de bajos recursos donde las personas viven en condiciones más cercanas, se debe alentar a la gente a mantener una distancia física de al menos 2 metros entre ellos.
+
+3.  Fomentar el uso de mascarillas: las mascarillas son una herramienta importante para prevenir la propagación del virus, y es importante educar a la comunidad sobre cómo usarlas correctamente y proporcionar mascarillas de forma gratuita para quienes no las tengan.
+
+4.  Promover el lavado de manos frecuente: el lavado de manos es una de las mejores maneras de prevenir la propagación del virus, y es importante proporcionar agua y jabón para que las personas puedan lavarse las manos con frecuencia.
+
+5.  Proporcionar acceso a suministros médicos: se debe asegurar que las personas tengan acceso a suministros médicos, como termómetros, oxígeno y medicamentos, en caso de que se enfermen.
+
+6.  Proporcionar ayuda financiera: las comunidades de bajos recursos pueden verse más afectadas por la crisis económica causada por la pandemia, y es importante proporcionar ayuda financiera a las personas que lo necesitan para ayudarles a hacer frente a la crisis.
+
+## Estudia la cercanía de SARS-CoV-2 con otros coronavirus humanos que ocasionan enfermedades similares (como MERS). En tu investigación debes trabajar con 20 virus diferentes.
+
+1.  ON110425
+
+2.  OQ288261
+
+3.  ON649998
+
+4.  OP430898
+
+5.  OQ048259
+
+6.  BS006993
+
+7.  ON797392
+
+8.  OP288484
+
+9.  OL444815
+
+10. ON653599
+
+11. MW375731
+
+12. MT127116
+
+13. OP604184
+
+14. OP077007
+
+15. MT374116
+
+16. MT705206
+
+17. MZ277281
+
+18. OQ091205
+
+19. ON413842
+
+20. MZ047083
+
+# Referencias
+
+Torun Ş, Kesim Ç, Süner A, Botan Yıldırım B, Özen Ö, Akçay Ş. Influenza viruses and SARS-CoV-2 in adult: 'Similarities and differences'. Tuberk Toraks. 2021 Dec;69(4):458-468. English. doi: 10.5578/tt.20219603. PMID: 34957739.
+
+Chen Z, Boon SS, Wang MH, Chan RWY, Chan PKS. Genomic and evolutionary comparison between SARS-CoV-2 and other human coronaviruses. J Virol Methods. 2021 Mar;289:114032. doi: 10.1016/j.jviromet.2020.114032. Epub 2020 Dec 5. PMID: 33290786; PMCID: PMC7718587.
+
+Keshta AS, Mallah SI, Al Zubaidi K, Ghorab OK, Keshta MS, Alarabi D, Abousaleh MA, Salman MT, Taha OE, Zeidan AA, Elsaid MF, Tang P. COVID-19 versus SARS: A comparative review. J Infect Public Health. 2021 Jul;14(7):967-977. doi: 10.1016/j.jiph.2021.04.007. Epub 2021 Apr 24. PMID: 34130121; PMCID: PMC8064890.
+
+Sing, T. & Liu, D. (2021). Similarities and Dissimilarities of COVID-19 and Other Coronavirus Diseases. Annual Review of Microbiology, Vol. 75, 19-47. <https://doi.org/10.1146/annurev-micro-110520-023212>
+
+# Code
+
+```{r setup, include=FALSE}
+
+```
+
+```{r}
+lengthSeq <- function(dnaseq) {
+  contador <- 0
+  for (i in 1:length(dnaseq)) {
+    contador <- contador + 1
+  }
+  return(contador)
+}
+```
+
+```{r}
+percentageBases <- function(dnaseq){
+  bnum <- c(0, 0, 0, 0)
+  for (i in 1:length(dnaseq)) {
+    if (dnaseq[i] == "A") {
+      bnum[1] <- bnum[1] + 1
+    } else if (dnaseq[i] == "C") {
+      bnum[2] <- bnum[2] + 1
+    } else if (dnaseq[i] == "G") {
+      bnum[3] <- bnum[3] + 1
+    } else if (dnaseq[i] == "T") {
+      bnum[4] <- bnum[4] + 1
+    }
+  }
+  tot_b <- sum(bnum)
+  porcentaje_bases <- c(0, 0, 0, 0)
+  for (i in 1:length(bnum)) {
+    porcentaje_bases[i] <- ((bnum[i] / tot_b) * 100)
+  }
+  return(porcentaje_bases)
+}
+```
+
+```{r}
+# Read Sequences and store it as a vector
+# Strain AY2741193.txt
+seq1 <- readLines("AY2741193.txt", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+strainAY27 <- strsplit(var1, "")[[1]]
+# Strain B11529.txt
+seq2 <- readLines("B11529.txt", n = -1)[-1]
+var2 <- paste(seq2, collapse = " ")
+strainB115 <- strsplit(var2, "")[[1]]
+# Strain B1351.txt
+seq3 <- readLines("B1351.txt", n = -1)[-1]
+var3 <- paste(seq3, collapse = " ")
+straineB135 <- strsplit(var3, "")[[1]]
+# Strain B16172.txt
+seq4 <- readLines("B16172.txt", n = -1)[-1]
+var4 <- paste(seq4, collapse = " ")
+strainB161 <- strsplit(var4, "")[[1]]
+```
+
+```{r}
+#strainAY27
+lengthAY27 <- lengthSeq(strainAY27)
+percentageGC_AY27 <- percentageGC(strainAY27)
+reverseSeqAY27 <- reverseSeq(strainAY27)
+print("strainAY27")
+print(paste("Longitud de secuencia",lengthAY27))
+print(paste("Porcentaje de GC en secuencia",percentageGC_AY27))
+```
+
+```{r}
+gwuhan = data.frame(
+  bases = c("A", "C", "G", "T"),
+  g1 = percentageBases(strainAY27)
+)
+
+w <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+  geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "Sars-CoV-2"), stat = "identity", position = "dodge") +
+  labs(title = "Comparación de las bases de ADN de las variantes del virus",x = "Bases", y = "Frecuencia", fill = "") +
+  scale_fill_manual(values = c("Sars-CoV-2" = "darkred")) +
+  theme_minimal()
+
+
+grid.arrange(w, ncol=2)
+```

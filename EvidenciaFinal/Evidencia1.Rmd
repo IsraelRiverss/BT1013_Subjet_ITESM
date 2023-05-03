@@ -1,0 +1,175 @@
+---
+title: "Evidencia 1"
+author: "Guadalupe Paulina López Cuevas"
+date: "2023-04-29"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Obtén las secuencias de las variantes de SARS-CoV-2
+Lectura de archivos FASTA y guardarlo dentro del codigo para no tener que buscar dentro del archuivo cada vez que necesite las secuencias
+```{r}
+#Librerias necesarias para poder leer archivos por medio de "seqinr"
+library(seqinr)
+library(ape)
+#WUHAN <- Primer variante detectada
+Wuhan <- seqinr::read.fasta(file=paste0(getwd(),.Platform$file.sep,
+                                        .Platform$file.sep,"Wuhan.fasta"), seqtype = "AA")
+#ALPHA <- Encontrada en Reino Unido
+Alpha <- seqinr::read.fasta(file=paste0(getwd(),.Platform$file.sep,
+                                        .Platform$file.sep,"Alpha.fasta"), seqtype = "AA")
+#DELTA <- Encontrada en India
+Delta <- seqinr::read.fasta(file=paste0(getwd(),.Platform$file.sep,
+                                        .Platform$file.sep,"Delta.fasta"), seqtype = "AA")
+#OMICRON <- Encontrada en Sudáfrica
+Omicron <- seqinr::read.fasta(file=paste0(getwd(),.Platform$file.sep,
+                                      .Platform$file.sep,"Omicron.fasta"), seqtype = "AA")
+#ACTUAL <- Variante más reciente en México
+Actual <- seqinr::read.fasta(file=paste0(getwd(),.Platform$file.sep,
+                                        .Platform$file.sep,"Actual.fasta"), seqtype = "AA")
+```
+
+## Función para saber la longitud de una secuencia
+```{r}
+tamSeq <- function(dnaseq) {
+  contador <- 0
+  for (i in 1:length(dnaseq)) {
+    contador <- contador + 1
+  }
+  print("Tamaño de la secuencia =")
+  return(contador)
+}
+```
+
+## Función para sacar todos los nucleotidos de la secuencia de cada variante
+```{r}
+countNucleotidos <- function(dnaseq){
+  bases <- c("C", "G", "A", "T")
+  amount =c(0, 0, 0, 0)
+  for(i in 1:length(bases)){
+    contador <- 0
+    for(j in 1:length(dnaseq)){
+      if (bases [i] == dnaseq [j]){
+        contador <- contador + 1
+      }
+    amount[i] <- contador*100/length(dnaseq)
+    }
+  }
+  # Imprime en % de Nucleotidos de la secuencia que esta siendo evaluada en la función
+  cat("% de Nucleotidos =", amount[1],"%C", amount[2], "%G", amount[3], "%A",
+      amount[4], "%T")
+  return(amount)
+}
+```
+
+Sacar la cantidad de nucleotidos de cada secuencia para comparar su estructura molecular
+```{r}
+Wuhan_arr <- countNucleotidos(unlist(seqinr::getSequence(Wuhan)))
+Alpha_arr <- countNucleotidos(unlist(seqinr::getSequence(Alpha)))
+Delta_arr <- countNucleotidos(unlist(seqinr::getSequence(Delta)))
+Omicron_arr <- countNucleotidos(unlist(seqinr::getSequence(Omicron)))
+Actual_arr <- countNucleotidos(unlist(seqinr::getSequence(Actual)))
+```
+
+
+## Función para graficar las secuencias de las diferentes variantes
+```{r}
+#Libreria necesaria para poder graficar con "ggplot"
+library("ggplot2")
+graficar <- function(Wuhan, Alpha, Delta, Omcron, Actual){
+  #Variantes que vamos a comparar en la gráfica
+  variantes <- c("Wuhan", "Alpha", "Delta", "Omicron", "Actual")
+  #Porcentaje de nucleotidos que tienen las secuencias de cada variante
+  conteo <- c(Wuhan_arr, Alpha_arr, Delta_arr, Omicron_arr, Actual_arr)
+  #Nucleotidos que van a ser comparados en la gráfica
+  Nucleotidos <- c("C", "G", "A", "T")
+  #Datos que van a ser proyectados en la gráfica
+  df <- data.frame(variantes, conteo, Nucleotidos)
+  
+  #Función "ggplot" para graficar (Asignación de los valores en cada eje de la gráfica)
+  #+ (creación de una gráfica de barras) + (Nombres de los ejes "x" y "y")
+  #+ (Nombre de la gráfica) + (Color de los nucleotidos dentro de la gráfica)
+  ggplot(df, aes(x = variantes, y = conteo, fill = Nucleotidos)) + geom_bar(stat = "identity", position = "fill") + xlab("Secuencia") + ylab("Nucleotidos (%)") + ggtitle("Composición de nucleótidos de 5 variantes") + scale_fill_manual(values = c("C" = "orange", "G" = "green", "A" = "red", "T" = "purple"))
+}
+```
+
+## Función para contar el %GC que hay en cada secuencia
+```{r}
+contadorGC <- function(dnaseq) {
+  bases <- c("C", "G")
+  c <- 0
+  for(i in 1:length(bases)){
+    contador <- 0
+    for(j in 1:length(dnaseq)){
+      if (bases [i] == dnaseq [j]){
+        contador <- contador + 1
+      }
+    }
+    amount <- contador*100/length(dnaseq)
+    c <- amount + c    
+  }
+  print(paste0("%GC en la secuencia : ", c, "%"))
+}
+```
+
+## Función para sacar la secuencia contrasentido
+```{r}
+reverse <- function(dnaseq) {
+  hebraInversa <- rev(dnaseq)
+  return(hebraInversa)
+}
+```
+
+# 2. Calcula la longitud de las secuencias de cada variante.
+```{r}
+#WUHAN
+tamSeq(unlist(seqinr::getSequence(Wuhan)))
+#ALPHA
+tamSeq(unlist(seqinr::getSequence(Alpha)))
+#DELTA
+tamSeq(unlist(seqinr::getSequence(Delta)))
+#OMICRON
+tamSeq(unlist(seqinr::getSequence(Omicron)))
+#ACTUAL
+tamSeq(unlist(seqinr::getSequence(Actual)))
+```
+
+# 3. Crea una gráfica donde compares las bases de ADN que componen a cada una de las variantes del virus.
+```{r}
+graficar(Wuhan_arr, Alpha_arr, Delta_arr, Omcron_arr, Actual_arr)
+```
+
+# 3.1 Interpretación de la gráfica
+Escribir interpretación de los datos que se muestran en la grafica
+
+# 4. ¿Cuál es el %GC de cada variante?
+```{r}
+#WUHAN
+contadorGC(unlist(seqinr::getSequence(Wuhan)))
+#ALPHA
+contadorGC(unlist(seqinr::getSequence(Alpha)))
+#DELTA
+contadorGC(unlist(seqinr::getSequence(Delta)))
+#OMICRON
+contadorGC(unlist(seqinr::getSequence(Omicron)))
+#ACTUAL
+contadorGC(unlist(seqinr::getSequence(Actual)))
+```
+
+# 5. Crea las secuencias contrasentido de cada variante.
+```{r}
+#WUHAN
+reverse(unlist(seqinr::getSequence(Wuhan)))
+#ALPHA
+reverse(unlist(seqinr::getSequence(Alpha)))
+#DELTA
+reverse(unlist(seqinr::getSequence(Delta)))
+#OMICRON
+reverse(unlist(seqinr::getSequence(Omicron)))
+#ACTUAL
+reverse(unlist(seqinr::getSequence(Actual)))
+```
+
