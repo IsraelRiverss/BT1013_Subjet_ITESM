@@ -1,5 +1,5 @@
 ---
-title: "evidenciaFinal"
+title: "Evidencia Final 1"
 author: "Fernando Israel Rios Garcia"
 date: "2023-04-30"
 output:
@@ -12,9 +12,9 @@ output:
 
 ```
 
-# Investiga,
+# Marco Teorico
 
-¿Cuál es la situación actual de COVID-19 a nivel mundial, en México, en tu estado de origen y en tu municipio, alcaldía o colonia? Puedes iniciar tu búsqueda en el sitio de [Johns HopkinsLinks to an external site.](https://coronavirus.jhu.edu/map.html).
+## ¿Cuál es la situación actual de COVID-19 a nivel mundial, en México, en tu estado de origen y en tu municipio, alcaldía o colonia? Puedes iniciar tu búsqueda en el sitio de [Johns HopkinsLinks to an external site.](https://coronavirus.jhu.edu/map.html).
 
 El estado de la pandemia de COVID-19 en la fecha 4/30/2023. Dentro del panorama mundial hay 676,609,955 casos de COVID-19, 6,881,955 de muertes. En México es de un total de casos COVID-19 de 7,483,444 con 333,1888 muertes por la enfermedad. Dentro de mi localidad, en el estado de Querétaro 191,063 de casos COVID-19 y 6,974 de muertos. Aunque en el municipio de Querétaro solo hay el dato de 125,169 casos COVID-19.
 
@@ -22,11 +22,11 @@ El estado de la pandemia de COVID-19 en la fecha 4/30/2023. Dentro del panorama 
 
 ![](images/Picture1.png)
 
-# ¿Cuál fue la primera variante del virus que se propagó a todo el mundo?
+## ¿Cuál fue la primera variante del virus que se propagó a todo el mundo?
 
 La primera variante de COVID-19 fue Alpha (B.1.1.7) según (Katella, 2023) "Alpha (B.1.1.7) was the first of the highly publicized variants. Alpha first appeared in Great Britain in November 2020 and infections surged in December of that year."
 
-# ¿Cuáles son las otras variantes del virus que existen en otras regiones del mundo?
+## ¿Cuáles son las otras variantes del virus que existen en otras regiones del mundo?
 
 Hay una larga de lista de variantes del COVID-19 desde la mencionada Alpha (B.1.1.7). Según el artículo escrito por (Katella, 2023):
 
@@ -42,11 +42,11 @@ Hay una larga de lista de variantes del COVID-19 desde la mencionada Alpha (B.1.
 
 There is another table of variants in the CDC segun (CDC,2023) existen las siguientes variantes:
 
-# ¿Cómo buscarías información de la variante del virus en tu país?
+## ¿Cómo buscarías información de la variante del virus en tu país?
 
 Para buscar información sobre la variante del virus en mi país, revisaría sitios oficiales del gobierno, como el de la Secretaría de Salud, que proporcionan información actualizada sobre COVID-19, incluyendo la propagación del virus y las variantes identificadas. También buscaría información en medios de comunicación locales, revistas y artículos científicos. Además, trataría de revisar lo que expertos en salud han declarado y seguir a organizaciones en redes sociales que estén brindando información confiable sobre la situación del virus en mi país y el mundo en general. Me aseguraría de verificar cualquier información que encuentre antes de compartirla con otros, para evitar difundir información falsa o engañosa.
 
-# Imagina que te encuentras en una situación similar a la de Li Wenliang, médico chino que intentó alertar sobre el brote de coronavirus en su país, pero fue detenido por las autoridades y obligado a retractarse, ¿qué harías en su caso? Selecciona un inciso:a) Lo reportas al centro de investigación o la universidad. b) Lo reportas a la prensa. c) Guardas la información. Elige y justifica tu respuesta. Revisa el siguiente video como apoyo:
+## Imagina que te encuentras en una situación similar a la de Li Wenliang, médico chino que intentó alertar sobre el brote de coronavirus en su país, pero fue detenido por las autoridades y obligado a retractarse, ¿qué harías en su caso? Selecciona un inciso:a) Lo reportas al centro de investigación o la universidad. b) Lo reportas a la prensa. c) Guardas la información. Elige y justifica tu respuesta. Revisa el siguiente video como apoyo:
 
 Lo reportaría a la prensa, creo que si yo fuera como Li un experto o profesional que tiene en sus manos información sensible, que si difundiera salvaría vidas la compartiría. Por que es mi vida por la de muchos mas, si me arrestaran por difundir la información o me mataran o desaparecieran seria mi vida por a ver alertado y por lo tanto salvado a muchos otros.
 
@@ -236,7 +236,6 @@ print("Secuencia al reves")
 print(reverseWuhan)
 ```
 
-
 ```{r}
 gwuhan = data.frame(
   bases = c("A", "C", "G", "T"),
@@ -296,3 +295,6 @@ grid.arrange(w,a,b,d,f, ncol=2)
 ```
 
 Las graficas muestran la comparacion de nuleotidos entre variantes, podemos notar que la adenina y timina en general son los que mashay dentro delas secuencia. pero en general no exite una diferencia que los haga ser distitnos entre variatnes de la enfermedad.
+
+# Referencias
+https://www.ncbi.nlm.nih.gov/

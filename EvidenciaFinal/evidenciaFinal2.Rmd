@@ -1,5 +1,5 @@
 ---
-title: "evidenciaFinal"
+title: "Evidencia Final 2"
 author: "Fernando Israel Rios Garcia"
 date: "2023-04-30"
 output:
@@ -58,7 +58,7 @@ En el articulo Similarities and Dissimilarities of COVID-19 and Other Coronaviru
 |          |             |
 |          | RCoV-P      |
 |          |             |
-|          | \*Horse     |
+|          | Horse     |
 |          |             |
 |          | ECoV        |
 +----------+-------------+
@@ -91,7 +91,7 @@ Durante la contingencia del SARS-CoV-2 en comunidades de bajos recursos, es impo
 
 6.  Proporcionar ayuda financiera: las comunidades de bajos recursos pueden verse más afectadas por la crisis económica causada por la pandemia, y es importante proporcionar ayuda financiera a las personas que lo necesitan para ayudarles a hacer frente a la crisis.
 
-## Estudia la cercanía de SARS-CoV-2 con otros coronavirus humanos que ocasionan enfermedades similares (como MERS). En tu investigación debes trabajar con 20 virus diferentes.
+## Analizar las secuencias de SARS-CoV-2 reportadas en los 20 países con más casos reportados. Y puedes tratar de responder a la pregunta: ¿Son muy diferentes las variantes entre cada país? ¿Es diferente el SARS-CoV-2 entre las diferentes poblaciones: Asiática, Hispana, Europea o Africana?
 
 1.  ON110425
 
@@ -143,11 +143,20 @@ Keshta AS, Mallah SI, Al Zubaidi K, Ghorab OK, Keshta MS, Alarabi D, Abousaleh M
 
 Sing, T. & Liu, D. (2021). Similarities and Dissimilarities of COVID-19 and Other Coronavirus Diseases. Annual Review of Microbiology, Vol. 75, 19-47. <https://doi.org/10.1146/annurev-micro-110520-023212>
 
+https://rdrr.io/bioc/QSutils/man/DNA.dist.html
+
 # Code
 
 ```{r setup, include=FALSE}
 
 ```
+
+```{r}
+library(ade4)
+library(ape)
+library(adegenet)
+```
+
 
 ```{r}
 lengthSeq <- function(dnaseq) {
@@ -208,12 +217,12 @@ strainB161 <- strsplit(var4, "")[[1]]
 
 ```{r}
 #strainAY27
-lengthAY27 <- lengthSeq(strainAY27)
-percentageGC_AY27 <- percentageGC(strainAY27)
-reverseSeqAY27 <- reverseSeq(strainAY27)
-print("strainAY27")
-print(paste("Longitud de secuencia",lengthAY27))
-print(paste("Porcentaje de GC en secuencia",percentageGC_AY27))
+length <- lengthSeq()
+percentageGC_ <- percentageGC()
+reverseSeq <- reverseSeq()
+print("strain")
+print(paste("Longitud de secuencia",length))
+print(paste("Porcentaje de GC en secuencia",percentageGC_))
 ```
 
 ```{r}
@@ -234,8 +243,8 @@ grid.arrange(w, ncol=2)
 
 ```{r}
 dna <- fasta2DNAbin(file="secuenciasEvidencia2.fasta")
-D <- dist.dna(dna, model = "TN93")
-D
+D <- dist.dna(dna, model = "raw")
+length(D)
 ```
 
 
