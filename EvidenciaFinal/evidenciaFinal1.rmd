@@ -18,6 +18,10 @@ output:
 
 El estado de la pandemia de COVID-19 en la fecha 4/30/2023. Dentro del panorama mundial hay 676,609,955 casos de COVID-19, 6,881,955 de muertes. En México es de un total de casos COVID-19 de 7,483,444 con 333,1888 muertes por la enfermedad. Dentro de mi localidad, en el estado de Querétaro 191,063 de casos COVID-19 y 6,974 de muertos. Aunque en el municipio de Querétaro solo hay el dato de 125,169 casos COVID-19.
 
+![](images/Screenshot%202023-05-02%20201138.png)
+
+![](images/Picture1.png)
+
 # ¿Cuál fue la primera variante del virus que se propagó a todo el mundo?
 
 La primera variante de COVID-19 fue Alpha (B.1.1.7) según (Katella, 2023) "Alpha (B.1.1.7) was the first of the highly publicized variants. Alpha first appeared in Great Britain in November 2020 and infections surged in December of that year."
@@ -37,7 +41,6 @@ Hay una larga de lista de variantes del COVID-19 desde la mencionada Alpha (B.1.
 5.Alpha (B.1.1.7)-Inglaterra 2020
 
 There is another table of variants in the CDC segun (CDC,2023) existen las siguientes variantes:
-
 
 # ¿Cómo buscarías información de la variante del virus en tu país?
 
@@ -121,117 +124,175 @@ percentageBases <- function(dnaseq){
 
 ```{r}
 # Read Sequences and store it as a vector
-# Strain AY2741193.txt
-seq1 <- readLines("", n = -1)[-1]
+# Strain Actual.txt
+seq1 <- readLines("./secuenciasEvidencia1/Actual.txt", n = -1)[-1]
 var1 <- paste(seq1, collapse = " ")
-strainAY27 <- strsplit(var1, "")[[1]]
-# Strain B11529.txt
-seq1 <- readLines("", n = -1)[-1]
+strainActual <- strsplit(var1, "")[[1]]
+# Strain Alpha.txt
+seq1 <- readLines("./secuenciasEvidencia1/Alpha.txt", n = -1)[-1]
 var1 <- paste(seq1, collapse = " ")
-strainAY27 <- strsplit(var1, "")[[1]]
-# Strain B1351.txt
-seq1 <- readLines("", n = -1)[-1]
+strainAlpha <- strsplit(var1, "")[[1]]
+# Strain Delta.txt
+seq1 <- readLines("./secuenciasEvidencia1/Delta.txt", n = -1)[-1]
 var1 <- paste(seq1, collapse = " ")
-strainAY27 <- strsplit(var1, "")[[1]]
-# Strain B16172.txt
-seq1 <- readLines("", n = -1)[-1]
+strainDelta <- strsplit(var1, "")[[1]]
+# Strain Omicron.txt
+seq1 <- readLines("./secuenciasEvidencia1/Omicron.txt", n = -1)[-1]
 var1 <- paste(seq1, collapse = " ")
-strainAY27 <- strsplit(var1, "")[[1]]
+strainOmicron <- strsplit(var1, "")[[1]]
+# Strain Wuhan.txt
+seq1 <- readLines("./secuenciasEvidencia1/Wuhan.txt", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+strainWuhan <- strsplit(var1, "")[[1]]
 ```
 
 ```{r}
-#strainAY27
-lengthAY27 <- lengthSeq(strainAY27)
-percentageGC_AY27 <- percentageGC(strainAY27)
-reverseSeqAY27 <- reverseSeq(strainAY27)
-print("strainAY27")
-print(paste("Longitud de secuencia",lengthAY27))
-print(paste("Porcentaje de GC en secuencia",percentageGC_AY27))
+#strainActual
+lengthActual <- lengthSeq(strainActual)
+percentageGC_Actual <- percentageGC(strainActual)
+percentageBasesActual <- percentageBases(strainActual)
+reverseActual <- reverseSeq(strainActual)
+print("strainActual")
+strainActual
+print(paste("Longitud de secuencia"))
+lengthActual
+print(paste("Porcentaje de GC en secuencia"))
+percentageGC_Actual
+print(paste("Porcentaje de Bases en secuencia"))
+percentageBasesActual
 print("Secuencia al reves")
-print(reverseSeqAY27)
+print(reverseActual)
 ```
 
 ```{r}
-#strainB115
-lengthB115 <- lengthSeq(strainB115)
-percentageGC_B115 <- percentageGC(strainB115)
-reverseSeqB115 <- reverseSeq(strainB115)
-print("strainB115")
-print(paste("Longitud de secuencia",lengthB115))
-print(paste("Porcentaje de GC en secuencia",percentageGC_B115))
+#strainAlpha
+lengthAlpha <- lengthSeq(strainAlpha)
+percentageGC_Alpha <- percentageGC(strainAlpha)
+percentageBasesAlpha <- percentageBases(strainAlpha)
+reverseAlpha <- reverseSeq(strainAlpha)
+print("strainAlpha")
+strainAlpha
+print(paste("Longitud de secuencia"))
+lengthAlpha
+print(paste("Porcentaje de GC en secuencia"))
+percentageGC_Alpha
+print(paste("Porcentaje de Bases en secuencia"))
+percentageBasesAlpha
 print("Secuencia al reves")
-print(reverseSeqB115)
+print(reverseAlpha)
 ```
 
 ```{r}
-#straineB135
-lengthB135 <- lengthSeq(straineB135)
-percentageGC_B135 <- percentageGC(straineB135)
-reverseSeqB135 <- reverseSeq(straineB135)
-print("straineB135")
-print(paste("Longitud de secuencia",lengthB135))
-print(paste("Porcentaje de GC en secuencia",percentageGC_B135))
+#strainDelta
+lengthDelta <- lengthSeq(strainDelta)
+percentageGC_Delta <- percentageGC(strainDelta)
+percentageBasesDelta <- percentageBases(strainDelta)
+reverseDelta <- reverseSeq(strainDelta)
+print("strainDelta")
+strainDelta
+print(paste("Longitud de secuencia"))
+lengthDelta
+print(paste("Porcentaje de GC en secuencia"))
+percentageGC_Delta
+print(paste("Porcentaje de Bases en secuencia"))
+percentageBasesDelta
 print("Secuencia al reves")
-print(reverseSeqB135)
+print(reverseDelta)
 ```
 
 ```{r}
-#strainB161
-lengthB161 <- lengthSeq(strainB161)
-percentageGC_B161 <- percentageGC(strainB161)
-reverseSeqB161 <- reverseSeq(strainB161)
-print("strainB161")
-print(paste("Longitud de secuencia",lengthB161))
-print(paste("Porcentaje de GC en secuencia",percentageGC_B161))
+#strainOmicron
+lengthOmicron <- lengthSeq(strainOmicron)
+percentageGC_Omicron <- percentageGC(strainOmicron)
+percentageBasesOmicron <- percentageBases(strainOmicron)
+reverseOmicron <- reverseSeq(strainOmicron)
+print("strainOmicron")
+strainOmicron
+print(paste("Longitud de secuencia"))
+lengthOmicron
+print(paste("Porcentaje de GC en secuencia"))
+percentageGC_Omicron
+print(paste("Porcentaje de Bases en secuencia"))
+percentageBasesOmicron
 print("Secuencia al reves")
-print(reverseSeqB161)
+print(reverseOmicron)
 ```
+
+```{r}
+#strainWuhan
+lengthWuhan <- lengthSeq(strainWuhan)
+percentageGC_Wuhan <- percentageGC(strainWuhan)
+percentageBasesWuhan <- percentageBases(strainWuhan)
+reverseWuhan <- reverseSeq(strainWuhan)
+print("strainWuhan")
+strainWuhan
+print(paste("Longitud de secuencia"))
+lengthWuhan
+print(paste("Porcentaje de GC en secuencia"))
+percentageGC_Wuhan
+print(paste("Porcentaje de Bases en secuencia"))
+percentageBasesWuhan
+print("Secuencia al reves")
+print(reverseWuhan)
+```
+
 
 ```{r}
 gwuhan = data.frame(
   bases = c("A", "C", "G", "T"),
-  g1 = percentageBases(strainAY27)
+  g1 = percentageBases(strainActual)
 )
 
 w <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
-  geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "strainAY27"), stat = "identity", position = "dodge") +
+  geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "strainActual"), stat = "identity", position = "dodge") +
   labs(title = "Comparación de las bases de ADN de las variantes del virus",x = "Bases", y = "Frecuencia", fill = "") +
-  scale_fill_manual(values = c("strainAY27" = "black")) +
+  scale_fill_manual(values = c("strainActual" = "black")) +
   theme_minimal()
 
 galfa = data.frame(
   bases = c("A", "C", "G", "T"),
-  g2 = percentageBases(strainB115)
+  g2 = percentageBases(strainAlpha)
 )
 
 a <- ggplot(galfa, aes(x = bases, y = g2, fill = bases)) +
-  geom_bar(data = galfa, aes(x = bases, y = g2, fill = "strainB115"), stat = "identity", position = "dodge") +
+  geom_bar(data = galfa, aes(x = bases, y = g2, fill = "strainAlpha"), stat = "identity", position = "dodge") +
   labs(title = "",x = "Bases", y = "Frecuencia", fill = "") +
-  scale_fill_manual(values = c("strainB115" = "grey")) +
+  scale_fill_manual(values = c("strainAlpha" = "grey")) +
   theme_minimal()
 
 gbeta = data.frame(
   bases = c("A", "C", "G", "T"),
-  g3 = percentageBases(straineB135)
+  g3 = percentageBases(strainDelta)
 )
 
 b <- ggplot(gbeta, aes(x = bases, y = g3, fill = bases)) +
-  geom_bar(data = gbeta, aes(x = bases, y = g3, fill = "straineB135"), stat = "identity", position = "dodge") +
+  geom_bar(data = gbeta, aes(x = bases, y = g3, fill = "strainDelta"), stat = "identity", position = "dodge") +
   labs(title = "",x = "Bases", y = "Frecuencia", fill = "") +
-  scale_fill_manual(values = c("straineB135" = "pink")) +
+  scale_fill_manual(values = c("strainDelta" = "pink")) +
   theme_minimal()
 
 gdelta = data.frame(
   bases = c("A", "C", "G", "T"),
-  g4 = percentageBases(strainB161)
+  g4 = percentageBases(strainOmicron)
 )
 d <- ggplot(gdelta, aes(x = bases, y = g4, fill = bases)) +
-  geom_bar(data = gdelta, aes(x = bases, y = g4, fill = "strainB161"), stat = "identity", position = "dodge") +
+  geom_bar(data = gdelta, aes(x = bases, y = g4, fill = "strainOmicron"), stat = "identity", position = "dodge") +
   labs(title = "",x = "Bases", y = "Frecuencia", fill = "") +
-  scale_fill_manual(values = c("strainB161" = "purple")) +
+  scale_fill_manual(values = c("strainOmicron" = "purple")) +
   theme_minimal()
 
-grid.arrange(w,a,b,d, ncol=2)
+gdelta = data.frame(
+  bases = c("A", "C", "G", "T"),
+  g4 = percentageBases(strainWuhan)
+)
+f <- ggplot(gdelta, aes(x = bases, y = g4, fill = bases)) +
+  geom_bar(data = gdelta, aes(x = bases, y = g4, fill = "strainWuhan"), stat = "identity", position = "dodge") +
+  labs(title = "",x = "Bases", y = "Frecuencia", fill = "") +
+  scale_fill_manual(values = c("strainWuhan" = "red")) +
+  theme_minimal()
+
+grid.arrange(w,a,b,d,f, ncol=2)
+
 ```
 
 Las graficas muestran la comparacion de nuleotidos entre variantes, podemos notar que la adenina y timina en general son los que mashay dentro delas secuencia. pero en general no exite una diferencia que los haga ser distitnos entre variatnes de la enfermedad.

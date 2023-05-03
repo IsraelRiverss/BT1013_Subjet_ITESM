@@ -233,12 +233,15 @@ grid.arrange(w, ncol=2)
 ```
 
 ```{r}
-# Color in function of the cluster
-par(mar=c(1,1,1,7))
-dend %>%
-  set("labels_col", value = c("skyblue", "orange", "grey"), k=3) %>%
-  set("branches_k_color", value = c("skyblue", "orange", "grey"), k = 3) %>%
-  plot(horiz=TRUE, axes=FALSE)
-abline(v = 350, lty = 2)
+dna <- fasta2DNAbin(file="secuenciasEvidencia2.fasta")
+D <- dist.dna(dna, model = "TN93")
+D
+```
+
+
+```{r fig1, fig.height = 15, fig.width= 8}
+tre <- njs(D)
+plot(tre, cex = 0.6)
+title("Árbol de tipo NJ")
 ```
 
