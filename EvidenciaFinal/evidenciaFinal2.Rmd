@@ -93,45 +93,7 @@ Durante la contingencia del SARS-CoV-2 en comunidades de bajos recursos, es impo
 
 ## Analizar las secuencias de SARS-CoV-2 reportadas en los 20 países con más casos reportados. Y puedes tratar de responder a la pregunta: ¿Son muy diferentes las variantes entre cada país? ¿Es diferente el SARS-CoV-2 entre las diferentes poblaciones: Asiática, Hispana, Europea o Africana?
 
-1.  ON110425
-
-2.  OQ288261
-
-3.  ON649998
-
-4.  OP430898
-
-5.  OQ048259
-
-6.  BS006993
-
-7.  ON797392
-
-8.  OP288484
-
-9.  OL444815
-
-10. ON653599
-
-11. MW375731
-
-12. MT127116
-
-13. OP604184
-
-14. OP077007
-
-15. MT374116
-
-16. MT705206
-
-17. MZ277281
-
-18. OQ091205
-
-19. ON413842
-
-20. MZ047083
+"SARS-CoV-2USA", "SARS-CoV-2India", "SARS-CoV-2Francia", "SARS-CoV-2 Alemania", "SARS-CoV-2 Brasil", "SARS-CoV-2 Japon","SARS-CoV-2 Corea del Sur", "SARS-CoV-2 Italia","SARS-CoV-2 Rusia","SARS-CoV-2 Turquia","SARS-CoV-2 España","SARS-CoV-2 Vietnam","SARS-CoV-2 Australia","SARS-CoV-2 Argentina","SARS-CoV-2 Taiwan","SARS-CoV-2 Holanda","SARS-CoV-2 Iran","SARS-CoV-2 Mexico", "SARS-CoV-2 Indonesia","SARS-CoV-2 Polonia"
 
 # Referencias
 
@@ -194,35 +156,35 @@ percentageBases <- function(dnaseq){
 ```{r}
 # Read Sequences and store it as a vector
 # Read Strain Actual.fasta
-seq1 <- readLines("Actual.fasta", n = -1)[-1]
-var1 <- paste(seq1, collapse = " ")
-strainAY27 <- strsplit(var1, "")[[1]]
+#seq1 <- readLines("Actual.fasta", n = -1)[-1]
+#var1 <- paste(seq1, collapse = " ")
+#strainAY27 <- strsplit(var1, "")[[1]]
 # Read Strain Alpha.fasta
-seq2 <- readLines("Alpha.fasta", n = -1)[-1]
-var2 <- paste(seq2, collapse = " ")
-strainB115 <- strsplit(var2, "")[[1]]
+#seq2 <- readLines("Alpha.fasta", n = -1)[-1]
+#var2 <- paste(seq2, collapse = " ")
+#strainB115 <- strsplit(var2, "")[[1]]
 # Read Strain Delta.fasta
-seq3 <- readLines("Delta.fasta", n = -1)[-1]
-var3 <- paste(seq3, collapse = " ")
-straineB135 <- strsplit(var3, "")[[1]]
+#seq3 <- readLines("Delta.fasta", n = -1)[-1]
+#var3 <- paste(seq3, collapse = " ")
+#straineB135 <- strsplit(var3, "")[[1]]
 # Read Strain Omicron.fasta
-seq4 <- readLines("Omicron.fasta", n = -1)[-1]
-var4 <- paste(seq4, collapse = " ")
-strainB161 <- strsplit(var4, "")[[1]]
+#seq4 <- readLines("Omicron.fasta", n = -1)[-1]
+#var4 <- paste(seq4, collapse = " ")
+#strainB161 <- strsplit(var4, "")[[1]]
 # Read Strain Wuhan.fasta
-seq4 <- readLines("Wuhan.fasta", n = -1)[-1]
-var4 <- paste(seq4, collapse = " ")
-strainB161 <- strsplit(var4, "")[[1]]
+#seq4 <- readLines("Wuhan.fasta", n = -1)[-1]
+#var4 <- paste(seq4, collapse = " ")
+#strainB161 <- strsplit(var4, "")[[1]]
 ```
 
 ```{r}
 #strainAY27
-length <- lengthSeq()
-percentageGC_ <- percentageGC()
-reverseSeq <- reverseSeq()
-print("strain")
-print(paste("Longitud de secuencia",length))
-print(paste("Porcentaje de GC en secuencia",percentageGC_))
+#length <- lengthSeq()
+#percentageGC_ <- percentageGC()
+#reverseSeq <- reverseSeq()
+#print("strain")
+#print(paste("Longitud de secuencia",length))
+#print(paste("Porcentaje de GC en secuencia",percentageGC_))
 ```
 
 ```{r}
@@ -242,9 +204,8 @@ grid.arrange(w, ncol=2)
 ```
 
 ```{r}
-dna <- fasta2DNAbin(file="secuenciasEvidencia2.fasta")
-D <- dist.dna(dna, model = "raw")
-length(D)
+dna <- fasta2DNAbin(file="Secuenncias.fasta")
+D <- dist.dna(dna, model = "TN93")
 ```
 
 
