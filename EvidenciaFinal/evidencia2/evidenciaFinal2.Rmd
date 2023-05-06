@@ -3,6 +3,7 @@ title: "Evidencia Final 2"
 author: "Fernando Israel Rios Garcia"
 date: "2023-04-30"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -25,55 +26,55 @@ El SRAS-Cov-2 es un virus de la familia coronavirus, los sintomas que un humano 
 
 En el articulo Similarities and Dissimilarities of COVID-19 and Other Coronavirus Diseases escrito por Sing Fung y Ding Xiang Liu mencionna los siguientes virus similares al genoma del SARS-Cov-2:
 
-+----------+-------------+
-| Host     | Coronavirus |
-+==========+=============+
-| Humans   | SARS-CoV    |
-|          |             |
-|          | MERS-CoV    |
-|          |             |
-|          | HCoV-229E   |
-|          |             |
-|          | HCoV-NL63   |
-|          |             |
-|          | HCoV-OC43   |
-|          |             |
-|          | HCoV-HKU1   |
-+----------+-------------+
-| Pig      | TGEV        |
-|          |             |
-|          | PRCoV       |
-|          |             |
-|          | PHEV        |
-|          |             |
-|          | PEDV        |
-|          |             |
-|          | PDCoV       |
-|          |             |
-|          | SADS-CoV    |
-+----------+-------------+
-| Mouse    | MHV         |
-+----------+-------------+
-| Rat      | SDAV        |
-|          |             |
-|          | RCoV-P      |
-|          |             |
-|          | Horse     |
-|          |             |
-|          | ECoV        |
-+----------+-------------+
-| Cattle   | BCoV        |
-+----------+-------------+
-| Cat      | FIPV        |
-|          |             |
-|          | FECV        |
-+----------+-------------+
-| Dog      | CCoV        |
-|          |             |
-|          | CRCoV       |
-+----------+-------------+
-| Chicken  | IBV         |
-+----------+-------------+
++-----------+-------------+
+| Host      | Coronavirus |
++===========+=============+
+| Humans    | SARS-CoV    |
+|           |             |
+|           | MERS-CoV    |
+|           |             |
+|           | HCoV-229E   |
+|           |             |
+|           | HCoV-NL63   |
+|           |             |
+|           | HCoV-OC43   |
+|           |             |
+|           | HCoV-HKU1   |
++-----------+-------------+
+| Pig       | TGEV        |
+|           |             |
+|           | PRCoV       |
+|           |             |
+|           | PHEV        |
+|           |             |
+|           | PEDV        |
+|           |             |
+|           | PDCoV       |
+|           |             |
+|           | SADS-CoV    |
++-----------+-------------+
+| Mouse     | MHV         |
++-----------+-------------+
+| Rat       | SDAV        |
+|           |             |
+|           | RCoV-P      |
+|           |             |
+|           | Horse \|    |
+|           |             |
+|           | ECoV        |
++-----------+-------------+
+| Cattle    | BCoV        |
++-----------+-------------+
+| Cat       | FIPV        |
+|           |             |
+|           | FECV        |
++-----------+-------------+
+| Dog       | CCoV        |
+|           |             |
+|           | CRCoV       |
++-----------+-------------+
+| Chicken   | IBV         |
++-----------+-------------+
 
 ## En relación con la situación actual reflexiona, ¿qué propondrías que se deba hacer durante la contingencia del SARS-CoV-2 en comunidades de bajos recursos? Si tu vivieras en una situación de escasos recursos, ¿qué harías? Justifica tu respuesta.
 
@@ -105,22 +106,206 @@ Keshta AS, Mallah SI, Al Zubaidi K, Ghorab OK, Keshta MS, Alarabi D, Abousaleh M
 
 Sing, T. & Liu, D. (2021). Similarities and Dissimilarities of COVID-19 and Other Coronavirus Diseases. Annual Review of Microbiology, Vol. 75, 19-47. <https://doi.org/10.1146/annurev-micro-110520-023212>
 
-https://rdrr.io/bioc/QSutils/man/DNA.dist.html
+<https://rdrr.io/bioc/QSutils/man/DNA.dist.html>
 
 # Code
+
 ```{r}
 # Call packages 
 library(ade4)
 library(ape)
 library(adegenet) # Packages to read DNA seq
+library(gridExtra)
+library(ggplot2)
+library(stringr)
+library(seqinr)
 # Bring files, functions files
-source("./basesGraph.r")
-#source("./lenghtSeq.r")
+source("./lengthSeq.r")
 source("./percentageBases.r")
 source("./phylogeneticTreeGraph.r")
 ```
 
 ```{r}
-phylogeneticGraph <- phylogeneticTreeGraph()
+seq1 <- readLines("./secuenciasEvidencia2/Mexico.fasta", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+seqMexico <- strsplit(var1, "")[[1]]
+
+seq1 <- readLines("./secuenciasEvidencia2/Argentina.fasta", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+seqArgentina <- strsplit(var1, "")[[1]]
+
+seq1 <- readLines("./secuenciasEvidencia2/Polonia.fasta", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+seqPoland <- strsplit(var1, "")[[1]]
+
+seq1 <- readLines("./secuenciasEvidencia2/Vietnam.fasta", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+seqVietnam <- strsplit(var1, "")[[1]]
+
+seq1 <- readLines("./secuenciasEvidencia2/CoreaDelSur.fasta", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+seqSouthKorea <- strsplit(var1, "")[[1]]
+
+seq1 <- readLines("./secuenciasEvidencia2/Alemania.fasta", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+seqGermany <- strsplit(var1, "")[[1]]
+
+seq1 <- readLines("./secuenciasEvidencia2/Australia.fasta", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+seqAustralia <- strsplit(var1, "")[[1]]
+
+seq1 <- readLines("./secuenciasEvidencia2/PaisesBajos.fasta", n = -1)[-1]
+var1 <- paste(seq1, collapse = " ")
+seqNetherlands <- strsplit(var1, "")[[1]]
+
+dnaSeq_array <- array(c(seqMexico, seqArgentina, seqPoland, seqVietnam, seqSouthKorea, seqGermany, seqAustralia, seqNetherlands), dim = c(8, 2))
+
+```
+
+
+```{r}
+# Call and store returns values of functions
+# Call length function
+lengthSEQMexico <-lengthSeq(seqMexico)
+lengthSEQArgentina <-lengthSeq(seqArgentina)
+lengthSEQPoland <-lengthSeq(seqPoland)
+lengthSEQVietnam <-lengthSeq(seqVietnam)
+lengthSEQSouthKorea <-lengthSeq(seqSouthKorea)
+lengthSEQGermany <-lengthSeq(seqGermany)
+lengthSEQAustralia <-lengthSeq(seqAustralia)
+lengthSEQNetherlands <-lengthSeq(seqNetherlands)
+# Call percentageBases function
+basesSEQMexico <- percentageBases(seqMexico)
+basesSEQArgentina <- percentageBases(seqArgentina)
+basesSEQPoland <- percentageBases(seqPoland)
+basesSEQVietnam <- percentageBases(seqVietnam)
+basesSEQSouthKorea <- percentageBases(seqSouthKorea)
+basesSEQGermany <- percentageBases(seqGermany)
+basesSEQAustralia <- percentageBases(seqAustralia)
+basesSEQNetherlands <- percentageBases(seqNetherlands)
+
+print(paste("Longitud de la secuencia de COVID-19 en Mexico",lengthSEQMexico))
+print(paste("Longitud de la secuencia de COVID-19 en Argentina",lengthSEQArgentina))
+print(paste("",))
+print(paste("",))
+print(paste("",))
+print(paste("",))
+print(paste("",))
+print(paste("",))
+
+print(paste("",))
+print(paste("",))
+print(paste("",))
+print(paste("",))
+print(paste("",))
+print(paste("",))
+print(paste("",))
+print(paste("",))
+
+```
+
+```{r}
+    gwuhan = data.frame(
+    bases = c("A", "C", "G", "T"),
+    g1 = percentageBases(seqMexico)
+  )
+
+  q <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+    geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "SeqMexico"), stat = "identity", position = "dodge") +
+    labs(title = "Comparación de las bases de ADN de las variantes del virus",x = "Bases", y = "Frecuencia", fill = "") +
+    scale_fill_manual(values = c("SeqMexico" = "pink")) +
+    theme_minimal()
+  
+    gwuhan = data.frame(
+    bases = c("A", "C", "G", "T"),
+    g1 = percentageBases(seqArgentina)
+  )
+  
+  w <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+    geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "SeqArgentina"), stat = "identity", position = "dodge") +
+    labs(x = "Bases", y = "Frecuencia", fill = "") +
+    scale_fill_manual(values = c("SeqArgentina" = "purple")) +
+    theme_minimal()
+
+  grid.arrange(q,w, ncol=2)
+  
+      gwuhan = data.frame(
+    bases = c("A", "C", "G", "T"),
+    g1 = percentageBases(seqPoland)
+  )
+
+  q <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+    geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "SeqPoland"), stat = "identity", position = "dodge") +
+    labs(title = "Comparación de las bases de ADN de las variantes del virus",x = "Bases", y = "Frecuencia", fill = "") +
+    scale_fill_manual(values = c("SeqPoland" = "pink")) +
+    theme_minimal()
+  
+    gwuhan = data.frame(
+    bases = c("A", "C", "G", "T"),
+    g1 = percentageBases(seqVietnam)
+  )
+  
+  w <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+    geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "SeqVietnam"), stat = "identity", position = "dodge") +
+    labs(x = "Bases", y = "Frecuencia", fill = "") +
+    scale_fill_manual(values = c("SeqVietnam" = "purple")) +
+    theme_minimal()
+
+  grid.arrange(q,w, ncol=2)
+  
+      gwuhan = data.frame(
+    bases = c("A", "C", "G", "T"),
+    g1 = percentageBases(seqSouthKorea)
+  )
+
+  q <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+    geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "SeqSouthKorea"), stat = "identity", position = "dodge") +
+    labs(title = "Comparación de las bases de ADN de las variantes del virus",x = "Bases", y = "Frecuencia", fill = "") +
+    scale_fill_manual(values = c("SeqSouthKorea" = "pink")) +
+    theme_minimal()
+  
+    gwuhan = data.frame(
+    bases = c("A", "C", "G", "T"),
+    g1 = percentageBases(seqGermany)
+  )
+  
+  w <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+    geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "SeqGermany"), stat = "identity", position = "dodge") +
+    labs(x = "Bases", y = "Frecuencia", fill = "") +
+    scale_fill_manual(values = c("SeqGermany" = "purple")) +
+    theme_minimal()
+
+  grid.arrange(q,w, ncol=2)
+  
+      gwuhan = data.frame(
+    bases = c("A", "C", "G", "T"),
+    g1 = percentageBases(seqAustralia)
+  )
+
+  q <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+    geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "SeqAustralia"), stat = "identity", position = "dodge") +
+    labs(title = "Comparación de las bases de ADN de las variantes del virus",x = "Bases", y = "Frecuencia", fill = "") +
+    scale_fill_manual(values = c("SeqAustralia" = "pink")) +
+    theme_minimal()
+  
+    gwuhan = data.frame(
+    bases = c("A", "C", "G", "T"),
+    g1 = percentageBases(seqNetherlands)
+  )
+  
+  w <- ggplot(gwuhan, aes(x = bases, y = g1, fill = bases)) +
+    geom_bar(data = gwuhan, aes(x = bases, y = g1, fill = "SeqNetherlands"), stat = "identity", position = "dodge") +
+    labs(x = "Bases", y = "Frecuencia", fill = "") +
+    scale_fill_manual(values = c("SeqNetherlands" = "purple")) +
+    theme_minimal()
+
+  grid.arrange(q,w, ncol=2)
+```
+
+
+```{r}
+# Print phylogeneticTreeGraph
+phylogeneticGraph <- phylogeneticTreeGraph() # Call Function that create graph
 phylogeneticGraph
+
 ```

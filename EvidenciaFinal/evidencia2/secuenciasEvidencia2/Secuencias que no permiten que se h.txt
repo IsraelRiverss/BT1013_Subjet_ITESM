@@ -1,0 +1,13 @@
+Secuencias que no permiten que se haga el arbol filogenetico
+
+brazil
+francia
+india
+indionesia
+iran
+Italia
+Japon
+rusia
+Taiwan
+turquia
+USA
