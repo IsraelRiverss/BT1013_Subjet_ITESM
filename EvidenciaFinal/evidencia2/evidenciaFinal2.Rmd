@@ -109,9 +109,5 @@ https://rdrr.io/bioc/QSutils/man/DNA.dist.html
 
 # Code
 ```{r}
-source("./basesGraph.r")
-source("./lenghtSeq.r")
 source("./main.r")
-source("./percentageBases.r")
-source("./phylogeneticTreeGraph.r")
 ```
