@@ -1,0 +1,117 @@
+---
+title: "Evidencia Final 2"
+author: "Fernando Israel Rios Garcia"
+date: "2023-04-30"
+output:
+  html_document:
+    df_print: paged
+---
+
+# Evidencia 2
+
+## ¿Cuáles son los virus "similares" a SARS-CoV-2 en el mundo?
+
+El SRAS-Cov-2 es un virus de la familia coronavirus, los sintomas que un humano presenta al cotagiarse son los de la gripe. Por lo tanto los virus similares al COVID-19 presentan sintomas parecidos en los huespedes que contagian, sus diferencias varian en la efectividad en la que se contagian y la tasa de moratlidad. En los humanos hay siete virus similares al SARS-Cov-2:
+
+1.  SARS-CoV-2
+2.  SARS-CoV
+3.  MERS-CoV
+4.  HCoV-229E
+5.  HCoV-NL63
+6.  HCoV-OC43
+7.  HCoV-HKU1
+
+## Especies que pueden ser cercanos al genoma de SARS-CoV-2? Incluye de qué especies son y menciona las referencias de los artículos consultados en PUBMED.
+
+En el articulo Similarities and Dissimilarities of COVID-19 and Other Coronavirus Diseases escrito por Sing Fung y Ding Xiang Liu mencionna los siguientes virus similares al genoma del SARS-Cov-2:
+
++----------+-------------+
+| Host     | Coronavirus |
++==========+=============+
+| Humans   | SARS-CoV    |
+|          |             |
+|          | MERS-CoV    |
+|          |             |
+|          | HCoV-229E   |
+|          |             |
+|          | HCoV-NL63   |
+|          |             |
+|          | HCoV-OC43   |
+|          |             |
+|          | HCoV-HKU1   |
++----------+-------------+
+| Pig      | TGEV        |
+|          |             |
+|          | PRCoV       |
+|          |             |
+|          | PHEV        |
+|          |             |
+|          | PEDV        |
+|          |             |
+|          | PDCoV       |
+|          |             |
+|          | SADS-CoV    |
++----------+-------------+
+| Mouse    | MHV         |
++----------+-------------+
+| Rat      | SDAV        |
+|          |             |
+|          | RCoV-P      |
+|          |             |
+|          | Horse     |
+|          |             |
+|          | ECoV        |
++----------+-------------+
+| Cattle   | BCoV        |
++----------+-------------+
+| Cat      | FIPV        |
+|          |             |
+|          | FECV        |
++----------+-------------+
+| Dog      | CCoV        |
+|          |             |
+|          | CRCoV       |
++----------+-------------+
+| Chicken  | IBV         |
++----------+-------------+
+
+## En relación con la situación actual reflexiona, ¿qué propondrías que se deba hacer durante la contingencia del SARS-CoV-2 en comunidades de bajos recursos? Si tu vivieras en una situación de escasos recursos, ¿qué harías? Justifica tu respuesta.
+
+Durante la contingencia del SARS-CoV-2 en comunidades de bajos recursos, es importante tomar medidas para proteger la salud de las personas y prevenir la propagación del virus. Algunas de las medidas que se pueden tomar incluyen:
+
+1.  Promover la educación sobre el virus: es importante difundir información precisa y confiable sobre el virus y cómo prevenir su propagación. Se pueden utilizar carteles, folletos o anuncios en los medios locales para educar a la comunidad.
+
+2.  Promover el distanciamiento físico: aunque puede ser difícil en comunidades de bajos recursos donde las personas viven en condiciones más cercanas, se debe alentar a la gente a mantener una distancia física de al menos 2 metros entre ellos.
+
+3.  Fomentar el uso de mascarillas: las mascarillas son una herramienta importante para prevenir la propagación del virus, y es importante educar a la comunidad sobre cómo usarlas correctamente y proporcionar mascarillas de forma gratuita para quienes no las tengan.
+
+4.  Promover el lavado de manos frecuente: el lavado de manos es una de las mejores maneras de prevenir la propagación del virus, y es importante proporcionar agua y jabón para que las personas puedan lavarse las manos con frecuencia.
+
+5.  Proporcionar acceso a suministros médicos: se debe asegurar que las personas tengan acceso a suministros médicos, como termómetros, oxígeno y medicamentos, en caso de que se enfermen.
+
+6.  Proporcionar ayuda financiera: las comunidades de bajos recursos pueden verse más afectadas por la crisis económica causada por la pandemia, y es importante proporcionar ayuda financiera a las personas que lo necesitan para ayudarles a hacer frente a la crisis.
+
+## Analizar las secuencias de SARS-CoV-2 reportadas en los 20 países con más casos reportados. Y puedes tratar de responder a la pregunta: ¿Son muy diferentes las variantes entre cada país? ¿Es diferente el SARS-CoV-2 entre las diferentes poblaciones: Asiática, Hispana, Europea o Africana?
+
+"SARS-CoV-2USA", "SARS-CoV-2India", "SARS-CoV-2Francia", "SARS-CoV-2 Alemania", "SARS-CoV-2 Brasil", "SARS-CoV-2 Japon","SARS-CoV-2 Corea del Sur", "SARS-CoV-2 Italia","SARS-CoV-2 Rusia","SARS-CoV-2 Turquia","SARS-CoV-2 España","SARS-CoV-2 Vietnam","SARS-CoV-2 Australia","SARS-CoV-2 Argentina","SARS-CoV-2 Taiwan","SARS-CoV-2 Holanda","SARS-CoV-2 Iran","SARS-CoV-2 Mexico", "SARS-CoV-2 Indonesia","SARS-CoV-2 Polonia"
+
+# Referencias
+
+Torun Ş, Kesim Ç, Süner A, Botan Yıldırım B, Özen Ö, Akçay Ş. Influenza viruses and SARS-CoV-2 in adult: 'Similarities and differences'. Tuberk Toraks. 2021 Dec;69(4):458-468. English. doi: 10.5578/tt.20219603. PMID: 34957739.
+
+Chen Z, Boon SS, Wang MH, Chan RWY, Chan PKS. Genomic and evolutionary comparison between SARS-CoV-2 and other human coronaviruses. J Virol Methods. 2021 Mar;289:114032. doi: 10.1016/j.jviromet.2020.114032. Epub 2020 Dec 5. PMID: 33290786; PMCID: PMC7718587.
+
+Keshta AS, Mallah SI, Al Zubaidi K, Ghorab OK, Keshta MS, Alarabi D, Abousaleh MA, Salman MT, Taha OE, Zeidan AA, Elsaid MF, Tang P. COVID-19 versus SARS: A comparative review. J Infect Public Health. 2021 Jul;14(7):967-977. doi: 10.1016/j.jiph.2021.04.007. Epub 2021 Apr 24. PMID: 34130121; PMCID: PMC8064890.
+
+Sing, T. & Liu, D. (2021). Similarities and Dissimilarities of COVID-19 and Other Coronavirus Diseases. Annual Review of Microbiology, Vol. 75, 19-47. <https://doi.org/10.1146/annurev-micro-110520-023212>
+
+https://rdrr.io/bioc/QSutils/man/DNA.dist.html
+
+# Code
+```{r}
+source("./basesGraph.r")
+source("./lenghtSeq.r")
+source("./main.r")
+source("./percentageBases.r")
+source("./phylogeneticTreeGraph.r")
+```
