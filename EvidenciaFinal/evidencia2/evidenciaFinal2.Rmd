@@ -109,5 +109,18 @@ https://rdrr.io/bioc/QSutils/man/DNA.dist.html
 
 # Code
 ```{r}
-source("./main.r")
+# Call packages 
+library(ade4)
+library(ape)
+library(adegenet) # Packages to read DNA seq
+# Bring files, functions files
+source("./basesGraph.r")
+#source("./lenghtSeq.r")
+source("./percentageBases.r")
+source("./phylogeneticTreeGraph.r")
+```
+
+```{r}
+phylogeneticGraph <- phylogeneticTreeGraph()
+phylogeneticGraph
 ```
