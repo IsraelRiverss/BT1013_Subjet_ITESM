@@ -110,7 +110,7 @@ Sing, T. & Liu, D. (2021). Similarities and Dissimilarities of COVID-19 and Othe
 
 # Code
 
-```{r}
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
 # Call packages 
 library(ade4)
 library(ape)
@@ -184,24 +184,15 @@ basesSEQGermany <- percentageBases(seqGermany)
 basesSEQAustralia <- percentageBases(seqAustralia)
 basesSEQNetherlands <- percentageBases(seqNetherlands)
 
+print("Listado de la longitud de las secuencias de COVID-19 utilizadas en este reporte")
 print(paste("Longitud de la secuencia de COVID-19 en Mexico",lengthSEQMexico))
 print(paste("Longitud de la secuencia de COVID-19 en Argentina",lengthSEQArgentina))
-print(paste("",))
-print(paste("",))
-print(paste("",))
-print(paste("",))
-print(paste("",))
-print(paste("",))
-
-print(paste("",))
-print(paste("",))
-print(paste("",))
-print(paste("",))
-print(paste("",))
-print(paste("",))
-print(paste("",))
-print(paste("",))
-
+print(paste("Longitud de la secuencia de COVID-19 en Poland",lengthSEQPoland))
+print(paste("Longitud de la secuencia de COVID-19 en Vietnam",lengthSEQVietnam))
+print(paste("Longitud de la secuencia de COVID-19 en South Korea",lengthSEQSouthKorea))
+print(paste("Longitud de la secuencia de COVID-19 en Germany",lengthSEQGermany))
+print(paste("Longitud de la secuencia de COVID-19 en Australia",lengthSEQAustralia))
+print(paste("Longitud de la secuencia de COVID-19 en Netherlands",lengthSEQNetherlands))
 ```
 
 ```{r}
@@ -309,3 +300,6 @@ phylogeneticGraph <- phylogeneticTreeGraph() # Call Function that create graph
 phylogeneticGraph
 
 ```
+Al ver nuestras graficas podemos notar como las diferencias aunque son percibibles, no es un cambio importante pues siguen teniendo parentesco entre si las variantes de cada pais. Revisando las graficas de historgramas en bases a las bases del ADN vemos como todas tienen un porcentaje parecido en su porcentaje correspondiente de cada bases. 
+Revisando el arbol filo genetico de las ocho secuencias analisadas podemos comprender mejor su parentesco.Vemos como hay tres branch, las cuales represetan una familia, dos secuencias son distintas y no comparten parentesco entre si mientras que la tercera parte de un nodo que lleva a otras dos difurcaciones, dejando dos clades. Estos dos clades correlacionan a sus secuncias como ancestros entre si. 
+Analizando las ubicaciones geograficas no podemos sacar concluciones ya que estan en distintos continetes y es aleatorio.

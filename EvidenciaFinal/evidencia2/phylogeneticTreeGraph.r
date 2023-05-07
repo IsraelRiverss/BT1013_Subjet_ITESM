@@ -4,6 +4,6 @@ phylogeneticTreeGraph <- function() {
     D <- dist.dna(dna, model = "TN93")
     # Graph phylogeneticTreeGraph.r
     tre <- njs(D)
-    plot(tre, cex = 2)
+    plot(tre, cex = .5)
     title("Árbol de tipo NJ")
 }
